@@ -1,26 +1,27 @@
 package co.hackingedu.app;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class HomeActivity extends Activity {
 
-	private ViewGroup map;
-	private ViewGroup cal;
-	private ViewGroup quest;
-	private ViewGroup alert;
-	private ViewGroup content;
-	private ViewGroup currentSelected;
+	private static final int MAP_TAB = 0;
+	private static final int CAL_TAB = 1;
+	private static final int FAQ_TAB = 2;
+	private static final int ALERT_TAB = 3;
 
-	private View inflatedMap;
-	private View inflatedCal;
-	private View inflatedQuest;
-	private View inflatedAlert;
-	private View currentInflated;
+	private Navbar nav;
+	private Resources r;
+	private int previousTab;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,120 +29,89 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 
-		setViews();
-		setLayouts();
-		setNavListeners();
-		inflateMapLayout();
+		r = getResources();
+		previousTab = -1;
+
+		setNavbar();
+		populateFAQ();
 
 	}
 
-	private void setViews() {
+	private void setNavbar() {
 
-		map = (ViewGroup) findViewById(R.id.nav_map);
-		cal = (ViewGroup) findViewById(R.id.nav_calendar);
-		quest = (ViewGroup) findViewById(R.id.nav_question);
-		alert = (ViewGroup) findViewById(R.id.nav_alert);
-		content = (ViewGroup) findViewById(R.id.content);
+		ViewGroup map = (ViewGroup) findViewById(R.id.nav_map);
+		ViewGroup cal = (ViewGroup) findViewById(R.id.nav_calendar);
+		ViewGroup quest = (ViewGroup) findViewById(R.id.nav_question);
+		ViewGroup alert = (ViewGroup) findViewById(R.id.nav_alert);
+		ViewGroup content = (ViewGroup) findViewById(R.id.content);
+
+		nav = new Navbar(content, getLayoutInflater());
+
+		nav.addTab(map, R.layout.fragment_home_map);
+		nav.addTab(cal, R.layout.fragment_home_calendar);
+		nav.addTab(quest, R.layout.fragment_home_question);
+		nav.addTab(alert, R.layout.fragment_home_alert);
+
+		nav.attachListeners();
 
 	}
 
-	private void setLayouts() {
+	private void populateFAQ() {
 
-		LayoutInflater inflater = getLayoutInflater();
-		inflatedMap = inflater.inflate(R.layout.fragment_home_map, null);
-		inflatedCal = inflater.inflate(R.layout.fragment_home_calendar, null);
-		inflatedQuest = inflater.inflate(R.layout.fragment_home_question, null);
-		inflatedAlert = inflater.inflate(R.layout.fragment_home_alert, null);
+		nav.setTab(FAQ_TAB);
 
-	}
+		FAQ first = new FAQ(r.getString(R.string.q1), r.getString(R.string.a1));
+		FAQ second = new FAQ(r.getString(R.string.q2), r.getString(R.string.a2));
+		FAQ third = new FAQ(r.getString(R.string.q3), r.getString(R.string.a3));
+		FAQ fourth = new FAQ(r.getString(R.string.q4), r.getString(R.string.a4));
+		FAQ fifth = new FAQ(r.getString(R.string.q5), r.getString(R.string.a5));
 
-	private void setNavListeners() {
+		ArrayList<FAQ> FAQs = new ArrayList<FAQ>();
+		FAQs.add(first);
+		FAQs.add(second);
+		FAQs.add(third);
+		FAQs.add(fourth);
+		FAQs.add(fifth);
 
-		map.setOnClickListener(new View.OnClickListener() {
+		FAQAdapter adapter = new FAQAdapter(this, FAQs);
+		ListView FAQlist = (ListView) findViewById(R.id.faq_list);
+
+		FAQlist.setAdapter(adapter);
+		FAQlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
-			public void onClick(View v) {
-				if (currentSelected != map) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedMap);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					map.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = map;
-					currentInflated = inflatedMap;
-
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				if (id == 4) {
+					nav.inflateView(R.layout.fragment_home_question_form);
+					findViewById(R.id.help_form_submit).setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							View current = getWindow().getCurrentFocus();
+							if (current != null) {
+								InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+								manager.hideSoftInputFromWindow(current.getWindowToken(), 0);
+							}
+							nav.deflateView();
+						}
+					});
 				}
 			}
 		});
 
-		cal.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != cal) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedCal);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					cal.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = cal;
-					currentInflated = inflatedCal;
-
-				}
-			}
-		});
-
-		quest.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != quest) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedQuest);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					quest.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = quest;
-					currentInflated = inflatedQuest;
-
-				}
-			}
-		});
-
-		alert.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != alert) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedAlert);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					alert.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = alert;
-					currentInflated = inflatedAlert;
-
-				}
-			}
-		});
+		nav.resetTab();
 
 	}
 
-	private void inflateMapLayout() {
-
-		content.addView(inflatedMap);
-		map.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.white));
-		currentSelected = map;
-		currentInflated = inflatedMap;
-
+	@Override
+	public void onBackPressed() {
+		if (previousTab == -1) {
+			super.onBackPressed();
+		} else if (nav.hasInflated()) {
+			nav.deflateView();
+		} else {
+			int temp = nav.getTab();
+			nav.setTab(previousTab);
+			previousTab = temp;
+		}
 	}
 
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center">
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:background="@color/white"
+		android:textSize="30sp"
+		android:textStyle="bold"
+		android:textColor="@color/black"
+		android:text="@string/help_title"/>
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="wrap_content"
+		android:hint="@string/help_name"/>
+
+	<EditText
+		android:layout_width="250dp"
+		android:layout_height="120dp"
+		android:inputType="textMultiLine"
+		android:gravity="start"
+		android:hint="@string/help_question"/>
+
+	<Button
+		android:id="@+id/help_form_submit"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/submit"/>
+
+</LinearLayout>
