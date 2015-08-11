@@ -1,4 +1,4 @@
-package co.hackingedu.app;
+package co.hackingedu.app.adapter.view;
 
 /**
  * Created by brandonkelley on 8/5/15.

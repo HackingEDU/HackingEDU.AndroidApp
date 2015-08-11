@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="@color/lightGrey">
+	android:layout_height="match_parent">
 
 	<TextView
 		android:layout_width="match_parent"
@@ -15,13 +13,12 @@
 		android:textSize="30sp"
 		android:textStyle="bold"
 		android:textColor="@color/black"
-		android:text="@string/faq"/>
+		android:text="@string/schedule_title"/>
 
 	<ListView
-		android:id="@+id/faq_list"
+		android:id="@+id/schedule_list"
 		android:layout_width="match_parent"
 		android:layout_height="fill_parent"
-		android:padding="@dimen/listview_padding">
-	</ListView>
+		android:padding="@dimen/listview_padding"/>
 
 </LinearLayout>

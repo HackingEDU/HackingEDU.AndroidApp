@@ -34,8 +34,7 @@
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -54,13 +53,12 @@
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
-				android:src="@drawable/calendar"/>
+				android:src="@drawable/schedule"/>
 
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -79,13 +77,12 @@
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
-				android:src="@drawable/question"/>
+				android:src="@drawable/faq"/>
 
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -104,13 +101,12 @@
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
-				android:src="@drawable/alert"/>
+				android:src="@drawable/newalert"/>
 
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -120,8 +116,7 @@
 		android:id="@+id/content"
 		android:layout_width="match_parent"
 		android:layout_height="fill_parent"
-		android:orientation="vertical">
-
-	</LinearLayout>
+		android:orientation="vertical"
+		android:background="@color/lightGrey"/>
 
 </LinearLayout>

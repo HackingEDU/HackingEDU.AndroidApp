@@ -1,4 +1,4 @@
-package co.hackingedu.app;
+package co.hackingedu.app.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by brandonkelley on 8/5/15.
- */
+import co.hackingedu.app.R;
+import co.hackingedu.app.adapter.view.FAQ;
+
 public class FAQAdapter extends BaseAdapter {
 
 	private ArrayList<FAQ> items;
@@ -43,7 +43,7 @@ public class FAQAdapter extends BaseAdapter {
 		ViewHolder holder;
 
 		if (view == null) {
-			view = inflater.inflate(R.layout.fragment_home_question_view, null);
+			view = inflater.inflate(R.layout.fragment_home_faq_view, null);
 			holder = new ViewHolder();
 			holder.question = (TextView) view.findViewById(R.id.question_q);
 			holder.answer = (TextView) view.findViewById(R.id.question_a);

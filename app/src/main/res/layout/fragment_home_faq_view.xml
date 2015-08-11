@@ -26,6 +26,6 @@
 		android:gravity="start"
 		android:layout_marginBottom="5dp"
 		android:textColor="@color/black"
-		android:textSize="12sp"/>
+		android:textSize="14sp"/>
 
 </LinearLayout>

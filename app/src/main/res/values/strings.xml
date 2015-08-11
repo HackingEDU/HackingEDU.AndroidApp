@@ -11,13 +11,36 @@
 	<string name="a3">Look for Vivek Vinodh, the tall, dark, and handsome Indian guy. He is the Git master. He should be sleeping in the stands right now.</string>
 	<string name="q4">No I meant how to Git ladies?</string>
 	<string name="a4">Oh! You\'ll have to talk to that handsome and sexy Indian male who goes by the name of Ro. He is the guy wearing the stylish snapback and skinny jeans. If he\'s not coding at the moment, he\'s probably gitting all of the ladies. ;)</string>
-	<string name="q5">Have an unanswered question?</string>
-	<string name="a5">Click here to submit a help form to HackingEDU Staff.</string>
 
+	<string name="help_q">Have an unanswered question?</string>
+	<string name="help_a">If the answer is not listed below, click here to submit a help form to HackingEDU Staff.</string>
 	<string name="help_title">Get Help</string>
 	<string name="help_name">Team Number</string>
 	<string name="help_question">Question</string>
 
 	<string name="submit">Submit</string>
+
+	<string name="alert_title">Notifications</string>
+	<string name="alert_pizza">Pizza is here! Drop by the Twilio Table.</string>
+	<string name="alert_time">30 minute warning. Submit your code soon!</string>
+	<string name="alert_git">Make sure to back up your code on some kind of VCS and commit often!</string>
+
+	<string name="schedule_title">Schedule</string>
+	<string name="s1_name">Badge Pick Up</string>
+	<string name="s1_start_time">9:00 AM</string>
+	<string name="s1_end_time">4:00 PM</string>
+	<string name="s1_location">Reception Desk</string>
+	<string name="s2_name">Breakfast</string>
+	<string name="s2_start_time">9:30 AM</string>
+	<string name="s2_end_time">10:45 AM</string>
+	<string name="s2_location">Main Lobby</string>
+	<string name="s3_name">How to GIT all the ladies</string>
+	<string name="s3_start_time">11:30 AM</string>
+	<string name="s3_end_time">12:30 PM</string>
+	<string name="s3_location">Tigga Room</string>
+	<string name="s4_name">Building non-responsive sites</string>
+	<string name="s4_start_time">1:00 PM</string>
+	<string name="s4_end_time">1:45 PM</string>
+	<string name="s4_location">Vivek\'s World</string>
 
 </resources>
