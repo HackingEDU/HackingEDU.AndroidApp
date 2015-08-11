@@ -2,29 +2,26 @@ package co.hackingedu.app.navbar;
 
 import java.util.ArrayList;
 
-/**
- * Created by brandonkelley on 8/10/15.
- */
 public class TabStack {
 
-	private ArrayList<Integer> tabs;
+	private ArrayList<Tab> tabs;
 
 	public TabStack() {
-		tabs = new ArrayList<Integer>();
+		tabs = new ArrayList<Tab>();
 	}
 
-	public void push(int tab) {
+	public void push(Tab tab) {
 		tabs.add(tab);
 	}
 
-	public int pop() {
-		int tab = tabs.get(tabs.size() - 1);
+	public Tab pop() {
+		Tab tab = tabs.get(tabs.size() - 1);
 		tabs.remove(tabs.size() - 1);
 		return tab;
 	}
 
 	public int peek() {
-		return tabs.size() > 0 ? tabs.get(tabs.size() - 1) : -1;
+		return tabs.size() > 0 ? tabs.get(tabs.size() - 1).getId() : -1;
 	}
 
 }

@@ -30,17 +30,25 @@
 	<string name="s1_start_time">9:00 AM</string>
 	<string name="s1_end_time">4:00 PM</string>
 	<string name="s1_location">Reception Desk</string>
+	<string name="s1_speaker">Some Person</string>
+	<string name="s1_description">Some stuff is going to happen!</string>
 	<string name="s2_name">Breakfast</string>
 	<string name="s2_start_time">9:30 AM</string>
 	<string name="s2_end_time">10:45 AM</string>
 	<string name="s2_location">Main Lobby</string>
+	<string name="s2_speaker">Other stuff person.</string>
+	<string name="s2_description">Lots of other stuff!</string>
 	<string name="s3_name">How to GIT all the ladies</string>
 	<string name="s3_start_time">11:30 AM</string>
 	<string name="s3_end_time">12:30 PM</string>
 	<string name="s3_location">Tigga Room</string>
+	<string name="s3_speaker">Rohit Tigga</string>
+	<string name="s3_description">Rohit Tigga has been an expert in Git and Ladies since 1995, the year he was born. However, using git to pull ladies is quite the considerable feat. Some say Ro is a natural expert due to his innate ability for understanding version control systems to the absolute core. Any lady knows that Ro is capable of designing the best user and date experience since sliced bread. He spits hot bars.</string>
 	<string name="s4_name">Building non-responsive sites</string>
 	<string name="s4_start_time">1:00 PM</string>
 	<string name="s4_end_time">1:45 PM</string>
 	<string name="s4_location">Vivek\'s World</string>
+	<string name="s4_speaker">Yup, last one.</string>
+	<string name="s4_description">Whew, it\'s over! I hate making up content.</string>
 
 </resources>

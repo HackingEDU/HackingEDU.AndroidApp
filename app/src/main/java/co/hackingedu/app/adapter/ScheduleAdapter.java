@@ -60,8 +60,7 @@ public class ScheduleAdapter extends BaseAdapter {
 		holder.image.setImageResource(schedule.getImage());
 		holder.startTime.setText(schedule.getStartTime());
 		holder.name.setText(schedule.getName());
-		String details = schedule.getStartTime() + " - " + schedule.getEndTime() + " / " + schedule.getLocation();
-		holder.details.setText(details);
+		holder.details.setText(schedule.getDetails());
 
 		return view;
 
