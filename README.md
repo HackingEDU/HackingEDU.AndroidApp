@@ -1,3 +1,3 @@
 # HackingEDU Android App #
 
-HackingEDU for Android, bitches.
+HackingEDU for Android.
