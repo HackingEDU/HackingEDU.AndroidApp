@@ -15,7 +15,7 @@ import co.hackingedu.app.R;
 import co.hackingedu.app.adapter.ScheduleAdapter;
 import co.hackingedu.app.adapter.view.Schedule;
 
-public class ScheduleController {
+public class ScheduleController implements Controller {
 
 	private ArrayList<Schedule> schedules;
 

@@ -10,11 +10,8 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center"
-		android:background="@color/white"
-		android:textSize="30sp"
-		android:textStyle="bold"
-		android:textColor="@color/black"
-		android:text="@string/faq"/>
+		android:text="@string/faq_title"
+		style="@style/title"/>
 
 	<ListView
 		android:id="@+id/faq_list"

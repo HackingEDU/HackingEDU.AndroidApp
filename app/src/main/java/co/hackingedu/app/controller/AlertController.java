@@ -10,7 +10,7 @@ import co.hackingedu.app.HomeActivity;
 import co.hackingedu.app.R;
 import co.hackingedu.app.adapter.AlertAdapter;
 
-public class AlertController {
+public class AlertController implements Controller {
 
 	private ArrayList<String> alerts;
 

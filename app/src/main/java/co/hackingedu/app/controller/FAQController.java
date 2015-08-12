@@ -5,7 +5,10 @@ import android.content.res.Resources;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -14,7 +17,7 @@ import co.hackingedu.app.R;
 import co.hackingedu.app.adapter.FAQAdapter;
 import co.hackingedu.app.adapter.view.FAQ;
 
-public class FAQController {
+public class FAQController implements Controller {
 
 	private ArrayList<FAQ> FAQs;
 
@@ -61,12 +64,39 @@ public class FAQController {
 								InputMethodManager manager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
 								manager.hideSoftInputFromWindow(current.getWindowToken(), 0);
 							}
-							activity.deflateView();
+							String teamNumber = ((EditText) activity.findViewById(R.id.help_form_team)).getText().toString();
+							String question = ((EditText) activity.findViewById(R.id.help_form_question)).getText().toString();
+							processHelpForm(activity, teamNumber, question);
 						}
 					});
 				}
 			}
 		});
+	}
+
+	private void processHelpForm(HomeActivity activity, String teamNumber, String question) {
+
+		if (teamNumber.equals("")) {
+			String message = "Please enter a valid team number.";
+			int length = Toast.LENGTH_SHORT;
+			Toast.makeText(activity, message, length).show();
+			return;
+		}
+
+		if (question.equals("")) {
+			String message = "Please enter a question.";
+			int length = Toast.LENGTH_SHORT;
+			Toast.makeText(activity, message, length).show();
+			return;
+		}
+
+		activity.deflateView();
+
+		String message = "Request sent successfully.";
+		int length = Toast.LENGTH_SHORT;
+		Toast.makeText(activity, message, length).show();
+		// Do something with information
+
 	}
 
 }

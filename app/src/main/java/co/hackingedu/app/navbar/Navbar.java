@@ -81,6 +81,10 @@ public class Navbar {
 		return tempInflated != null;
 	}
 
+	public int getCurrentTabIndex() {
+		return currentTab.getId();
+	}
+
 	public int getPreviousTabIndex() {
 		return previousTabs.peek();
 	}

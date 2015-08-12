@@ -1,8 +1,11 @@
 <resources>
 
 	<string name="app_name">App</string>
+	<string name="submit">Submit</string>
 
-	<string name="faq">FAQ</string>
+	<string name="map_title">Map</string>
+
+	<string name="faq_title">FAQ</string>
 	<string name="q1">Where/when to submit my hack?</string>
 	<string name="a1">All hacks must be submitted via ChallengePost at www.challengepost.com/hackingedu by 9:30am on Sunday in order to be eligible for prizes.</string>
 	<string name="q2">Who can help me with coding?</string>
@@ -11,14 +14,11 @@
 	<string name="a3">Look for Vivek Vinodh, the tall, dark, and handsome Indian guy. He is the Git master. He should be sleeping in the stands right now.</string>
 	<string name="q4">No I meant how to Git ladies?</string>
 	<string name="a4">Oh! You\'ll have to talk to that handsome and sexy Indian male who goes by the name of Ro. He is the guy wearing the stylish snapback and skinny jeans. If he\'s not coding at the moment, he\'s probably gitting all of the ladies. ;)</string>
-
 	<string name="help_q">Have an unanswered question?</string>
 	<string name="help_a">If the answer is not listed below, click here to submit a help form to HackingEDU Staff.</string>
 	<string name="help_title">Get Help</string>
 	<string name="help_name">Team Number</string>
 	<string name="help_question">Question</string>
-
-	<string name="submit">Submit</string>
 
 	<string name="alert_title">Notifications</string>
 	<string name="alert_pizza">Pizza is here! Drop by the Twilio Table.</string>

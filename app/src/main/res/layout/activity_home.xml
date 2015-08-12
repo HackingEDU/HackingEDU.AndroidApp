@@ -23,8 +23,7 @@
 			android:layout_weight="1"
 			android:paddingTop="@dimen/tab_padding"
 			android:paddingBottom="@dimen/tab_padding"
-			android:gravity="center"
-			android:clickable="true">
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
@@ -47,8 +46,7 @@
 			android:layout_weight="1"
 			android:paddingTop="@dimen/tab_padding"
 			android:paddingBottom="@dimen/tab_padding"
-			android:gravity="center"
-			android:clickable="true">
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
@@ -71,8 +69,7 @@
 			android:layout_weight="1"
 			android:paddingTop="@dimen/tab_padding"
 			android:paddingBottom="@dimen/tab_padding"
-			android:gravity="center"
-			android:clickable="true">
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
@@ -95,8 +92,7 @@
 			android:layout_weight="1"
 			android:paddingTop="@dimen/tab_padding"
 			android:paddingBottom="@dimen/tab_padding"
-			android:gravity="center"
-			android:clickable="true">
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"

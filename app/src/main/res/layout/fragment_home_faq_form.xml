@@ -26,12 +26,14 @@
 		android:gravity="center">
 
 		<EditText
+			android:id="@+id/help_form_team"
 			android:layout_width="250dp"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="20dp"
 			android:hint="@string/help_name"/>
 
 		<EditText
+			android:id="@+id/help_form_question"
 			android:layout_width="250dp"
 			android:layout_height="120dp"
 			android:inputType="textMultiLine"

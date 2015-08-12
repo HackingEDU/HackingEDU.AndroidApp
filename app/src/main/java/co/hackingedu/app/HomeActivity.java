@@ -3,6 +3,7 @@ package co.hackingedu.app;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import co.hackingedu.app.controller.AlertController;
 import co.hackingedu.app.controller.FAQController;
 import co.hackingedu.app.controller.ScheduleController;
 import co.hackingedu.app.navbar.Navbar;
+import co.hackingedu.app.scroll.ScrollManager;
 
 public class HomeActivity extends Activity {
 
@@ -20,6 +22,7 @@ public class HomeActivity extends Activity {
 	private static final int ALERT_TAB = 3;
 
 	private Navbar nav;
+	private ScrollManager mapScroller;
 	private ArrayList<String> notifications;
 
 	@Override
@@ -36,6 +39,7 @@ public class HomeActivity extends Activity {
 		notifications.add(r.getString(R.string.alert_git));
 
 		setNavbar();
+		setMapScroll();
 		populateSchedule();
 		populateFAQ();
 		populateAlerts();
@@ -59,6 +63,10 @@ public class HomeActivity extends Activity {
 
 		nav.attachListeners();
 
+	}
+
+	private void setMapScroll() {
+		mapScroller = new ScrollManager(this);
 	}
 
 	private void populateSchedule() {
@@ -109,6 +117,15 @@ public class HomeActivity extends Activity {
 
 	public void resetAlerts() {
 		notifications.clear();
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (nav.getCurrentTabIndex() == MAP_TAB) {
+			return mapScroller.processScroll(event);
+		} else {
+			return super.onTouchEvent(event);
+		}
 	}
 
 	@Override
