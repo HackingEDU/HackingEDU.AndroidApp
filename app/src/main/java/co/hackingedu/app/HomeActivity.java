@@ -1,6 +1,7 @@
 package co.hackingedu.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -13,6 +14,7 @@ import co.hackingedu.app.controller.FAQController;
 import co.hackingedu.app.controller.ScheduleController;
 import co.hackingedu.app.navbar.Navbar;
 import co.hackingedu.app.scroll.ScrollManager;
+import co.hackingedu.app.service.InstanceIdListenerService;
 
 public class HomeActivity extends Activity {
 
@@ -38,11 +40,23 @@ public class HomeActivity extends Activity {
 		notifications.add(r.getString(R.string.alert_time));
 		notifications.add(r.getString(R.string.alert_git));
 
+		startServices();
 		setNavbar();
 		setMapScroll();
 		populateSchedule();
 		populateFAQ();
 		populateAlerts();
+
+	}
+
+	private void startServices() {
+
+		startService(new Intent(this, InstanceIdListenerService.class));
+	}
+
+	private void stopServices() {
+
+		stopService(new Intent(this, InstanceIdListenerService.class));
 
 	}
 

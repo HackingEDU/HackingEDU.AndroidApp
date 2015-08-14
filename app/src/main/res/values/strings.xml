@@ -1,6 +1,7 @@
 <resources>
 
 	<string name="app_name">App</string>
+	<string name="sender_id">971576537325</string>
 	<string name="submit">Submit</string>
 
 	<string name="map_title">Map</string>
