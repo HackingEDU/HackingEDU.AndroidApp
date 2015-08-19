@@ -1,4 +1,4 @@
-package co.hackingedu.app.controller;
+package co.hackingedu.app.schedule;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,10 +12,8 @@ import java.util.ArrayList;
 
 import co.hackingedu.app.HomeActivity;
 import co.hackingedu.app.R;
-import co.hackingedu.app.adapter.ScheduleAdapter;
-import co.hackingedu.app.adapter.view.Schedule;
 
-public class ScheduleController implements Controller {
+public class ScheduleController {
 
 	private ArrayList<Schedule> schedules;
 

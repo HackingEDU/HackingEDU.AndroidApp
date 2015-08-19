@@ -12,7 +12,7 @@ import co.hackingedu.app.R;
 
 public class Navbar {
 
-	public static final int ALERT_TAB = 3;
+	public static final int ALERT_TAB = 4;
 
 	private ArrayList<Tab> tabs;
 	private TabStack previousTabs;

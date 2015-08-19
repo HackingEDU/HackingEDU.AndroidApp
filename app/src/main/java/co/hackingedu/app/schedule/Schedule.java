@@ -1,8 +1,6 @@
-package co.hackingedu.app.adapter.view;
+package co.hackingedu.app.schedule;
 
-import android.graphics.drawable.Drawable;
-
-public class Schedule {
+class Schedule {
 
 	private String name;
 	private String location;

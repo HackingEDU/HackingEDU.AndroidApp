@@ -1,4 +1,4 @@
-package co.hackingedu.app.controller;
+package co.hackingedu.app.faq;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -7,17 +7,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import co.hackingedu.app.HomeActivity;
 import co.hackingedu.app.R;
-import co.hackingedu.app.adapter.FAQAdapter;
-import co.hackingedu.app.adapter.view.FAQ;
 
-public class FAQController implements Controller {
+public class FAQController {
 
 	private ArrayList<FAQ> FAQs;
 

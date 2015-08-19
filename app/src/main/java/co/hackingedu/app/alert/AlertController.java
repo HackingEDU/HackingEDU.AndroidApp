@@ -1,4 +1,4 @@
-package co.hackingedu.app.controller;
+package co.hackingedu.app.alert;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 import co.hackingedu.app.HomeActivity;
 import co.hackingedu.app.R;
-import co.hackingedu.app.adapter.AlertAdapter;
+import co.hackingedu.app.alert.AlertAdapter;
 
-public class AlertController implements Controller {
+public class AlertController {
 
 	private ArrayList<String> alerts;
 

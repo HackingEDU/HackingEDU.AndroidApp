@@ -1,4 +1,4 @@
-package co.hackingedu.app.adapter;
+package co.hackingedu.app.schedule;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,9 +11,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import co.hackingedu.app.R;
-import co.hackingedu.app.adapter.view.Schedule;
 
-public class ScheduleAdapter extends BaseAdapter {
+class ScheduleAdapter extends BaseAdapter {
 
 	private ArrayList<Schedule> schedules;
 	private LayoutInflater inflater;

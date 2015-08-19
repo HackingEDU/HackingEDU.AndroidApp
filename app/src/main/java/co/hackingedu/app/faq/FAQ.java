@@ -1,9 +1,6 @@
-package co.hackingedu.app.adapter.view;
+package co.hackingedu.app.faq;
 
-/**
- * Created by brandonkelley on 8/5/15.
- */
-public class FAQ {
+class FAQ {
 
 	private String question;
 	private String answer;

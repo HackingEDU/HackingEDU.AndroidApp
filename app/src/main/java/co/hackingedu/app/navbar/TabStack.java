@@ -2,7 +2,7 @@ package co.hackingedu.app.navbar;
 
 import java.util.ArrayList;
 
-public class TabStack {
+class TabStack {
 
 	private ArrayList<Tab> tabs;
 

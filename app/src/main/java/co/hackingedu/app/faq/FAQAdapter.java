@@ -1,4 +1,4 @@
-package co.hackingedu.app.adapter;
+package co.hackingedu.app.faq;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,24 +11,24 @@ import java.util.ArrayList;
 
 import co.hackingedu.app.R;
 
-public class AlertAdapter extends BaseAdapter {
+class FAQAdapter extends BaseAdapter {
 
-	private ArrayList<String> alerts;
+	private ArrayList<FAQ> items;
 	private LayoutInflater inflater;
 
-	public AlertAdapter(Context context, ArrayList<String> alerts) {
+	public FAQAdapter(Context context, ArrayList<FAQ> items) {
+		this.items = items;
 		inflater = LayoutInflater.from(context);
-		this.alerts = alerts;
 	}
 
 	@Override
 	public int getCount() {
-		return alerts.size();
+		return items.size();
 	}
 
 	@Override
-	public String getItem(int index) {
-		return alerts.get(index);
+	public FAQ getItem(int index) {
+		return items.get(index);
 	}
 
 	@Override
@@ -42,23 +42,26 @@ public class AlertAdapter extends BaseAdapter {
 		ViewHolder holder;
 
 		if (view == null) {
-			view = inflater.inflate(R.layout.fragment_home_alert_view, null);
+			view = inflater.inflate(R.layout.fragment_home_faq_view, null);
 			holder = new ViewHolder();
-			holder.alert = (TextView) view.findViewById(R.id.alert);
+			holder.question = (TextView) view.findViewById(R.id.question_q);
+			holder.answer = (TextView) view.findViewById(R.id.question_a);
 			view.setTag(holder);
 		} else {
 			holder = (ViewHolder) view.getTag();
 		}
 
-		String alert = alerts.get(index);
-		holder.alert.setText(alert);
+		FAQ item = items.get(index);
+		holder.question.setText(item.getQuestion());
+		holder.answer.setText(item.getAnswer());
 
 		return view;
 
 	}
 
 	private static class ViewHolder {
-		TextView alert;
+		TextView question;
+		TextView answer;
 	}
 
 }

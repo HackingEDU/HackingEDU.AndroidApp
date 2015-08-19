@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import co.hackingedu.app.R;
 
-public class Tab {
+class Tab {
 
 	private int id;
 	private ViewGroup trigger;
