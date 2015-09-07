@@ -2,7 +2,10 @@
 
 	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 		<!-- Nothing -->
+		<item name="android:typeface">serif</item>
 	</style>
+
+
 
 	<style name="title">
 		<item name="android:background">@color/white</item>

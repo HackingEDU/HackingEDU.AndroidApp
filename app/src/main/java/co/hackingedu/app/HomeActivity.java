@@ -26,6 +26,7 @@ public class HomeActivity extends Activity {
 	private static final int SCHEDULE_TAB = 2;
 	private static final int FAQ_TAB = 3;
 	private static final int ALERT_TAB = 4;
+	private static final int CAMERA_TAB = 5;
 
 	private Navbar nav;
 	private ArrayList<String> notifications;
