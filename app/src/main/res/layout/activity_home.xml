@@ -10,36 +10,32 @@
 	android:orientation="vertical"
 	tools:context=".HomeActivity">
 
-	<RelativeLayout
-		android:layout_width="match_parent"
-		android:layout_height="@dimen/nav_height"
-		android:background="@color/black">
-
-		<ImageView
-			android:layout_width="@dimen/logo_width"
-			android:layout_height="match_parent"
-			android:layout_marginStart="@dimen/logo_margin_left"
-			android:layout_marginLeft="@dimen/logo_margin_left"
-			android:layout_alignParentStart="true"
-			android:layout_alignParentLeft="true"
-			android:src="@drawable/logo" />
-
-		<ImageView
-			android:layout_width="@dimen/gear_width"
-			android:layout_height="@dimen/gear_height"
-			android:layout_marginEnd="@dimen/gear_margin_right"
-			android:layout_marginRight="@dimen/gear_margin_right"
-			android:layout_marginTop="@dimen/gear_margin_top"
-			android:layout_marginBottom="@dimen/gear_margin_bottom"
-			android:layout_alignParentEnd="true"
-			android:layout_alignParentRight="true"
-			android:src="@drawable/gear"/>
-
-	</RelativeLayout>
-
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/nav_height">
+
+		<LinearLayout
+			android:id="@+id/nav_home"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:background="@color/black"
+			android:layout_weight="1"
+			android:paddingTop="@dimen/tab_padding"
+			android:paddingBottom="@dimen/tab_padding"
+			android:gravity="center">
+
+			<ImageView
+				android:layout_width="@dimen/icon_width"
+				android:layout_height="match_parent"
+				android:src="@drawable/home"/>
+
+			<RelativeLayout
+				android:layout_width="@dimen/selected_width"
+				android:layout_height="@dimen/selected_height"
+				android:background="@color/grey"/>
+
+		</LinearLayout>
 
 		<LinearLayout
 			android:id="@+id/nav_map"
@@ -48,10 +44,9 @@
 			android:orientation="vertical"
 			android:background="@color/black"
 			android:layout_weight="1"
-			android:paddingTop="@dimen/nav_padding_top"
-			android:paddingBottom="@dimen/nav_padding_bottom"
-			android:gravity="center"
-			android:clickable="true">
+			android:paddingTop="@dimen/tab_padding"
+			android:paddingBottom="@dimen/tab_padding"
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
@@ -61,8 +56,7 @@
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -73,21 +67,19 @@
 			android:orientation="vertical"
 			android:background="@color/black"
 			android:layout_weight="1"
-			android:paddingTop="@dimen/nav_padding_top"
-			android:paddingBottom="@dimen/nav_padding_bottom"
-			android:gravity="center"
-			android:clickable="true">
+			android:paddingTop="@dimen/tab_padding"
+			android:paddingBottom="@dimen/tab_padding"
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
-				android:src="@drawable/calendar"/>
+				android:src="@drawable/schedule"/>
 
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -98,21 +90,19 @@
 			android:orientation="vertical"
 			android:background="@color/black"
 			android:layout_weight="1"
-			android:paddingTop="@dimen/nav_padding_top"
-			android:paddingBottom="@dimen/nav_padding_bottom"
-			android:gravity="center"
-			android:clickable="true">
+			android:paddingTop="@dimen/tab_padding"
+			android:paddingBottom="@dimen/tab_padding"
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
-				android:src="@drawable/question"/>
+				android:src="@drawable/faq"/>
 
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -123,21 +113,19 @@
 			android:orientation="vertical"
 			android:background="@color/black"
 			android:layout_weight="1"
-			android:paddingTop="@dimen/nav_padding_top"
-			android:paddingBottom="@dimen/nav_padding_bottom"
-			android:gravity="center"
-			android:clickable="true">
+			android:paddingTop="@dimen/tab_padding"
+			android:paddingBottom="@dimen/tab_padding"
+			android:gravity="center">
 
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
-				android:src="@drawable/alert"/>
+				android:src="@drawable/newalert"/>
 
 			<RelativeLayout
 				android:layout_width="@dimen/selected_width"
 				android:layout_height="@dimen/selected_height"
-				android:background="@color/grey">
-			</RelativeLayout>
+				android:background="@color/grey"/>
 
 		</LinearLayout>
 
@@ -147,8 +135,7 @@
 		android:id="@+id/content"
 		android:layout_width="match_parent"
 		android:layout_height="fill_parent"
-		android:orientation="vertical">
-
-	</LinearLayout>
+		android:orientation="vertical"
+		android:background="@color/lightGrey"/>
 
 </LinearLayout>

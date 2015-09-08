@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:text="@string/home_title"
+		style="@style/title"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginEnd="10dp"
+		android:padding="10dp"
+		android:background="@color/white">
+
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginStart="20dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginEnd="10dp"
+			android:src="@drawable/wifi"
+			android:layout_gravity="center_vertical"/>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center_horizontal|center_vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="18sp"
+				android:textColor="@color/black"
+				android:text="Wifi: Network"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="18sp"
+				android:textColor="@color/black"
+				android:text="Password: password"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+	
+	<android.support.v4.widget.Space
+		android:layout_width="wrap_content"
+		android:layout_height="1dp"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:orientation="horizontal"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginEnd="10dp"
+		android:padding="10dp"
+		android:background="@color/white">
+
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginStart="20dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginEnd="10dp"
+			android:src="@drawable/time"
+			android:layout_gravity="center_vertical"/>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center_horizontal|center_vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="12sp"
+				android:textColor="@color/black"
+				android:text="Project must be submitted to ChallengePost by 5:30pm or else team won't be eligible for prizes."/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<android.support.v4.widget.Space
+		android:layout_width="wrap_content"
+		android:layout_height="1dp"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:orientation="horizontal"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginEnd="10dp"
+		android:padding="10dp"
+		android:background="@color/white">
+
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginStart="20dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginEnd="10dp"
+			android:src="@drawable/trophy"
+			android:layout_gravity="center_vertical"/>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center_horizontal|center_vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="12sp"
+				android:textColor="@color/black"
+				android:text="Prize 1: Oculus Rift\nPrize 2: Macbook Pro 2015\nPrize 3: Kiss from Rohit"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<android.support.v4.widget.Space
+		android:layout_width="wrap_content"
+		android:layout_height="1dp"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:orientation="horizontal"
+		android:layout_marginLeft="10dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginEnd="10dp"
+		android:padding="10dp"
+		android:background="@color/white">
+
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginRight="20dp"
+			android:layout_marginStart="20dp"
+			android:layout_marginLeft="10dp"
+			android:layout_marginEnd="10dp"
+			android:src="@drawable/source"
+			android:layout_gravity="center_vertical"/>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center_horizontal|center_vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="12sp"
+				android:textColor="@color/black"
+				android:text="Pebble: http://www.pebble.com/api\nTwilio: http://www.api.twilio.com\nFirebase: http://www.firebase.com/reference"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

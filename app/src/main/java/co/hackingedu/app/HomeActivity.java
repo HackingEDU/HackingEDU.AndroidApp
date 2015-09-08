@@ -1,26 +1,34 @@
 package co.hackingedu.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
+import android.util.Log;
 import android.view.ViewGroup;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+
+import java.util.ArrayList;
+
+import co.hackingedu.app.alert.AlertController;
+import co.hackingedu.app.faq.FAQController;
+import co.hackingedu.app.map.MapController;
+import co.hackingedu.app.schedule.ScheduleController;
+import co.hackingedu.app.navbar.Navbar;
+import co.hackingedu.app.service.RegistrationService;
 
 public class HomeActivity extends Activity {
 
-	private ViewGroup map;
-	private ViewGroup cal;
-	private ViewGroup quest;
-	private ViewGroup alert;
-	private ViewGroup content;
-	private ViewGroup currentSelected;
+	private static final int HOME_TAB = 0;
+	private static final int MAP_TAB = 1;
+	private static final int SCHEDULE_TAB = 2;
+	private static final int FAQ_TAB = 3;
+	private static final int ALERT_TAB = 4;
 
-	private View inflatedMap;
-	private View inflatedCal;
-	private View inflatedQuest;
-	private View inflatedAlert;
-	private View currentInflated;
+	private Navbar nav;
+	private ArrayList<String> notifications;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,120 +36,131 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 
-		setViews();
-		setLayouts();
-		setNavListeners();
-		inflateMapLayout();
+		notifications = new ArrayList<String>();
+
+		Resources r = getResources();
+		notifications.add(r.getString(R.string.alert_pizza));
+		notifications.add(r.getString(R.string.alert_time));
+		notifications.add(r.getString(R.string.alert_git));
+
+		setNavbar();
+		populateMap();
+		populateSchedule();
+		populateFAQ();
+		populateAlerts();
+
+		if (checkPlayServices()) {
+			Intent intent = new Intent(this, RegistrationService.class);
+			startService(intent);
+		}
 
 	}
 
-	private void setViews() {
+	private boolean checkPlayServices() {
+		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+		if (resultCode != ConnectionResult.SUCCESS) {
+			if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+				GooglePlayServicesUtil.getErrorDialog(resultCode, this, 9000).show();
+			} else {
+				Log.d("BMK", "Google Play Failed.");
+				finish();
+			}
+			return false;
+		}
+		return true;
+	}
 
-		map = (ViewGroup) findViewById(R.id.nav_map);
-		cal = (ViewGroup) findViewById(R.id.nav_calendar);
-		quest = (ViewGroup) findViewById(R.id.nav_question);
-		alert = (ViewGroup) findViewById(R.id.nav_alert);
-		content = (ViewGroup) findViewById(R.id.content);
+	private void setNavbar() {
+
+		ViewGroup homeTab = (ViewGroup) findViewById(R.id.nav_home);
+		ViewGroup mapTab = (ViewGroup) findViewById(R.id.nav_map);
+		ViewGroup scheduleTab = (ViewGroup) findViewById(R.id.nav_calendar);
+		ViewGroup faqTab = (ViewGroup) findViewById(R.id.nav_question);
+		ViewGroup alertTab = (ViewGroup) findViewById(R.id.nav_alert);
+		ViewGroup content = (ViewGroup) findViewById(R.id.content);
+
+		nav = new Navbar(content, getLayoutInflater());
+
+		nav.addTab(homeTab, R.layout.fragment_home_home);
+		nav.addTab(mapTab, R.layout.fragment_home_map);
+		nav.addTab(scheduleTab, R.layout.fragment_home_schedule);
+		nav.addTab(faqTab, R.layout.fragment_home_faq);
+		nav.addTab(alertTab, R.layout.fragment_home_alert);
+
+		nav.attachListeners();
 
 	}
 
-	private void setLayouts() {
+	private void populateMap() {
 
-		LayoutInflater inflater = getLayoutInflater();
-		inflatedMap = inflater.inflate(R.layout.fragment_home_map, null);
-		inflatedCal = inflater.inflate(R.layout.fragment_home_calendar, null);
-		inflatedQuest = inflater.inflate(R.layout.fragment_home_question, null);
-		inflatedAlert = inflater.inflate(R.layout.fragment_home_alert, null);
+		nav.setTab(MAP_TAB);
 
-	}
+		MapController controller = new MapController();
+		controller.configure(this);
 
-	private void setNavListeners() {
-
-		map.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != map) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedMap);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					map.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = map;
-					currentInflated = inflatedMap;
-
-				}
-			}
-		});
-
-		cal.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != cal) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedCal);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					cal.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = cal;
-					currentInflated = inflatedCal;
-
-				}
-			}
-		});
-
-		quest.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != quest) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedQuest);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					quest.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = quest;
-					currentInflated = inflatedQuest;
-
-				}
-			}
-		});
-
-		alert.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (currentSelected != alert) {
-
-					content.removeView(currentInflated);
-					content.addView(inflatedAlert);
-
-					Resources r = getResources();
-					currentSelected.getChildAt(1).setBackgroundColor(r.getColor(R.color.grey));
-					alert.getChildAt(1).setBackgroundColor(r.getColor(R.color.white));
-
-					currentSelected = alert;
-					currentInflated = inflatedAlert;
-
-				}
-			}
-		});
+		nav.resetTab();
 
 	}
 
-	private void inflateMapLayout() {
+	private void populateSchedule() {
 
-		content.addView(inflatedMap);
-		map.getChildAt(1).setBackgroundColor(getResources().getColor(R.color.white));
-		currentSelected = map;
-		currentInflated = inflatedMap;
+		nav.setTab(SCHEDULE_TAB);
 
+		ScheduleController controller = new ScheduleController();
+		controller.configure(this);
+
+		nav.resetTab();
+
+	}
+
+	private void populateFAQ() {
+
+		nav.setTab(FAQ_TAB);
+
+		FAQController controller = new FAQController();
+		controller.configure(this);
+
+		nav.resetTab();
+
+	}
+
+	private void populateAlerts() {
+
+		nav.setTab(ALERT_TAB);
+
+		AlertController controller = new AlertController();
+		controller.setAlerts(notifications);
+		controller.configure(this);
+
+		nav.resetTab();
+
+	}
+
+	public void inflateView(int layoutId) {
+		nav.inflateView(layoutId);
+	}
+
+	public void deflateView() {
+		nav.deflateView();
+	}
+
+	public boolean hasAlerts() {
+		return notifications.size() > 0;
+	}
+
+	public void resetAlerts() {
+		notifications.clear();
+	}
+
+	@Override
+	public void onBackPressed() {
+		if (nav.getPreviousTabIndex() == -1) {
+			super.onBackPressed();
+		} else if (nav.hasInflated()) {
+			nav.deflateView();
+		} else {
+			nav.setPreviousTab();
+		}
 	}
 
 }

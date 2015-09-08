@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/listview_item_padding"
+	android:background="@color/white">
+
+	<ImageView
+		android:id="@+id/schedule_image"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:layout_gravity="center_vertical"
+		android:layout_margin="5dp"/>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_gravity="center_vertical"
+		android:layout_marginStart="5dp"
+		android:layout_marginLeft="5dp">
+
+		<TextView
+			android:id="@+id/schedule_start_time"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="24sp"
+			android:textColor="@color/black"/>
+
+		<TextView
+			android:id="@+id/schedule_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="16sp"
+			android:textColor="@color/black"/>
+
+		<TextView
+			android:id="@+id/schedule_details"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="12sp"
+			android:textColor="@color/black"
+			android:layout_marginTop="5dp"
+			android:layout_marginBottom="5dp"/>
+
+	</LinearLayout>
+
+</LinearLayout>
