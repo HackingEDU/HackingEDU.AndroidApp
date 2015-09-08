@@ -4,16 +4,18 @@ package co.hackingedu.app.camera;
  * Created by Spicycurryman on 9/5/15.
  */
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
 import co.hackingedu.app.R;
 
 
-public class CameraActivity extends FragmentActivity {
+public class CameraActivity extends Activity {
     private static final String CAMERA_FRAGMENT = "camera_fragment";
     private CameraFragment fragment;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

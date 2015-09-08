@@ -68,6 +68,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".camera.CameraActivity">
+        </activity>
+
     </application>
 
 </manifest>

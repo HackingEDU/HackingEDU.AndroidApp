@@ -4,9 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -32,6 +33,8 @@ public class HomeActivity extends Activity {
 
 	private Navbar nav;
 	private ArrayList<String> notifications;
+	private ImageView cameraButton;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class HomeActivity extends Activity {
 		setContentView(R.layout.activity_home);
 
 		notifications = new ArrayList<String>();
+
 
 		Resources r = getResources();
 		notifications.add(r.getString(R.string.alert_pizza));
@@ -52,6 +56,9 @@ public class HomeActivity extends Activity {
 		populateFAQ();
 		populateAlerts();
 		showCamera();
+
+
+
 
 		if (checkPlayServices()) {
 			Intent intent = new Intent(this, RegistrationService.class);
@@ -142,13 +149,18 @@ public class HomeActivity extends Activity {
 
 	}
 
-	private FragmentActivity showCamera(){
-
+	private void showCamera(){
 		nav.setTab(CAMERA_TAB);
-		FragmentActivity showcamera= new CameraActivity();
-		return showcamera;
+		//how is this null?
+		cameraButton = (ImageView) findViewById(R.id.navigation_camera);
+		cameraButton.setOnClickListener(new View.OnClickListener() {
 
-
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(HomeActivity.this, CameraActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	public void inflateView(int layoutId) {

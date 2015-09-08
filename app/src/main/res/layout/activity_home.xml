@@ -143,6 +143,7 @@
 			<ImageView
 				android:layout_width="@dimen/icon_width"
 				android:layout_height="match_parent"
+				android:id="@+id/navigation_camera"
 				android:src="@drawable/camera"/>
 
 			<RelativeLayout

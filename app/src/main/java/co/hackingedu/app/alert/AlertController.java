@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 import co.hackingedu.app.HomeActivity;
 import co.hackingedu.app.R;
-import co.hackingedu.app.alert.AlertAdapter;
 
 public class AlertController {
 
@@ -37,6 +36,7 @@ public class AlertController {
 		AlertAdapter adapter = new AlertAdapter(activity, alerts);
 		ListView alertView = (ListView) activity.findViewById(R.id.alert_list);
 		alertView.setAdapter(adapter);
+
 	}
 
 }
