@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.ViewGroup;
 
@@ -13,10 +14,11 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import java.util.ArrayList;
 
 import co.hackingedu.app.alert.AlertController;
+import co.hackingedu.app.camera.CameraActivity;
 import co.hackingedu.app.faq.FAQController;
 import co.hackingedu.app.map.MapController;
-import co.hackingedu.app.schedule.ScheduleController;
 import co.hackingedu.app.navbar.Navbar;
+import co.hackingedu.app.schedule.ScheduleController;
 import co.hackingedu.app.service.RegistrationService;
 
 public class HomeActivity extends Activity {
@@ -49,6 +51,7 @@ public class HomeActivity extends Activity {
 		populateSchedule();
 		populateFAQ();
 		populateAlerts();
+		showCamera();
 
 		if (checkPlayServices()) {
 			Intent intent = new Intent(this, RegistrationService.class);
@@ -79,6 +82,7 @@ public class HomeActivity extends Activity {
 		ViewGroup faqTab = (ViewGroup) findViewById(R.id.nav_question);
 		ViewGroup alertTab = (ViewGroup) findViewById(R.id.nav_alert);
 		ViewGroup content = (ViewGroup) findViewById(R.id.content);
+		ViewGroup cameraTab = (ViewGroup) findViewById(R.id.nav_camera);
 
 		nav = new Navbar(content, getLayoutInflater());
 
@@ -87,6 +91,7 @@ public class HomeActivity extends Activity {
 		nav.addTab(scheduleTab, R.layout.fragment_home_schedule);
 		nav.addTab(faqTab, R.layout.fragment_home_faq);
 		nav.addTab(alertTab, R.layout.fragment_home_alert);
+		nav.addTab(cameraTab, R.layout.activity_camera);
 
 		nav.attachListeners();
 
@@ -134,6 +139,15 @@ public class HomeActivity extends Activity {
 		controller.configure(this);
 
 		nav.resetTab();
+
+	}
+
+	private FragmentActivity showCamera(){
+
+		nav.setTab(CAMERA_TAB);
+		FragmentActivity showcamera= new CameraActivity();
+		return showcamera;
+
 
 	}
 
