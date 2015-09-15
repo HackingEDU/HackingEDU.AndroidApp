@@ -6,7 +6,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/schedule_item_title"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
 		android:textStyle="bold"
 		android:textColor="@color/black"/>
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/schedule_item_details"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
 			android:layout_marginRight="10dp"
 			android:layout_marginEnd="10dp"/>
 
-		<TextView
+		<co.hackingedu.app.LatoTextView
 			android:id="@+id/schedule_item_speaker"
 			android:layout_width="fill_parent"
 			android:layout_height="match_parent"
@@ -51,7 +51,7 @@
 
 	</LinearLayout>
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/schedule_item_description"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

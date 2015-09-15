@@ -9,7 +9,7 @@
 	android:padding="@dimen/listview_item_padding"
 	android:background="@color/white">
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/question_q"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
 		android:textColor="@color/black"
 		android:textSize="20sp"/>
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/question_a"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

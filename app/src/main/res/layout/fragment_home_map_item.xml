@@ -6,7 +6,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/map_full_title"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

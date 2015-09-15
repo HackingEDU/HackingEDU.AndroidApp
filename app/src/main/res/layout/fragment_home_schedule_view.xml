@@ -23,21 +23,21 @@
 		android:layout_marginStart="5dp"
 		android:layout_marginLeft="5dp">
 
-		<TextView
+		<co.hackingedu.app.LatoTextView
 			android:id="@+id/schedule_start_time"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="24sp"
 			android:textColor="@color/black"/>
 
-		<TextView
+		<co.hackingedu.app.LatoTextView
 			android:id="@+id/schedule_name"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="16sp"
 			android:textColor="@color/black"/>
 
-		<TextView
+		<co.hackingedu.app.LatoTextView
 			android:id="@+id/schedule_details"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"

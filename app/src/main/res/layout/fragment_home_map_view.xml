@@ -16,7 +16,7 @@
 		android:layout_marginEnd="30dp"
 		android:layout_gravity="center_vertical"/>
 
-	<TextView
+	<co.hackingedu.app.LatoTextView
 		android:id="@+id/map_title"
 		android:layout_width="fill_parent"
 		android:layout_height="match_parent"
